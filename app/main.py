@@ -1,13 +1,9 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-import cv2
-import os
 from pydantic import BaseModel
 from typing import List
 
 app = FastAPI()
-
-VIDEO_PATH = "video.mp4"
 
 class DeskStatus(BaseModel):
     desk_id: int
@@ -22,6 +18,7 @@ class OfficeAnalysis(BaseModel):
 
 @app.get("/analyze", response_model=OfficeAnalysis)
 def analyze_office():
+    # Datos simulados (sin visión por computadora real)
     simulated_desks = [
         {"desk_id": 1, "occupied": True, "last_vacant_seconds": 0.0},
         {"desk_id": 2, "occupied": True, "last_vacant_seconds": 0.0},
