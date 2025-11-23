@@ -7,7 +7,6 @@ from typing import List
 
 app = FastAPI()
 
-# Simulated video path from uploaded image context (in practice replace with actual video input)
 VIDEO_PATH = "video.mp4"
 
 class DeskStatus(BaseModel):
@@ -23,7 +22,6 @@ class OfficeAnalysis(BaseModel):
 
 @app.get("/analyze", response_model=OfficeAnalysis)
 def analyze_office():
-    # Simulate desk data (this would be the output of a vision model in production)
     simulated_desks = [
         {"desk_id": 1, "occupied": True, "last_vacant_seconds": 0.0},
         {"desk_id": 2, "occupied": True, "last_vacant_seconds": 0.0},
