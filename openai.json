@@ -6,11 +6,11 @@
   },
   "servers": [
     {
-      "url": "https://TU_BACKEND_HOSTEADO.com"
+      "url": "https://vector-video.vercel.app"
     }
   ],
   "paths": {
-    "/video/office-analysis": {
+    "/analyze": {
       "get": {
         "summary": "Análisis de video de oficina",
         "parameters": [
