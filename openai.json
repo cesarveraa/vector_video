@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Video Oficina Analyzer",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://TU_BACKEND_HOSTEADO.com"
+    }
+  ],
+  "paths": {
+    "/video/office-analysis": {
+      "get": {
+        "summary": "Análisis de video de oficina",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Datos sobre ocupación de puestos y conteo de personas en oficina"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Internal-Secret"
+      }
+    }
+  }
+}
